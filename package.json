@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "WEBKIT_DISABLE_DMABUF_RENDERER=1 tauri"
+    "tauri": "cross-env WEBKIT_DISABLE_DMABUF_RENDERER=1 tauri"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
@@ -30,6 +30,7 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.5.0",
+    "cross-env": "^10.1.0",
     "postcss": "^8.5.10",
     "tailwindcss": "^3.4.19",
     "typescript": "~5.8.3",
