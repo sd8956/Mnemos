@@ -9,6 +9,15 @@ fn greet(name: &str) -> String {
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    // Workaround for WebKitGTK DMABUF renderer crash on Wayland
+    // (https://bugs.webkit.org/show_bug.cgi?id=261874). Must be set
+    // before the webview initializes.
+    #[cfg(target_os = "linux")]
+    // SAFETY: called at process start before any threads spawn.
+    unsafe {
+        std::env::set_var("WEBKIT_DISABLE_DMABUF_RENDERER", "1");
+    }
+
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_fs::init())
