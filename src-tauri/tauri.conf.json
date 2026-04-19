@@ -25,7 +25,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["deb", "appimage"],
+    "targets": "all",
     "category": "Productivity",
     "shortDescription": "Notes from you and your agents.",
     "longDescription": "Mnemos is a desktop note-taking app with an infinite Miro-style canvas. Organize notes as categories and integrate read-only with Engram memory for AI-generated context.",
